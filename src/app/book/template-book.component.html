@@ -1,0 +1,19 @@
+<div>
+   <h1>书籍</h1>
+
+   <ul style="display: flex;">
+      <li *ngFor="let item of bookList" style="width: 300px; height: 320px; border: 1px solid #ddd;margin-left: 20px;" 
+      (click)="$event.stopPropagation();$event.preventDefault(); jumpDetial(item.id)">
+         <div>{{ item.name }}</div>
+         <div>{{ item.id }}</div>
+         <a (click)="$event.stopPropagation()" [routerLink]="['/details', '1']" [queryParams]="{id: item.id}"  style="color:blue; font-size: 12px;cursor:pointer">查看详情</a>
+         <br>
+         <a (click)="$event.stopPropagation()" [routerLink]="['./intro']" [queryParams]="{id: item.id }"><i>简介</i></a>
+         <br>
+         <b (click)="$event.stopPropagation(); toChildPath()">js 跳转到子路由</b>
+      </li>
+   </ul>
+   <div style="padding: 50px; border: 2px solid blueviolet; width: 100%; min-height: 200px; ">
+      <router-outlet></router-outlet>
+   </div>
+</div>
