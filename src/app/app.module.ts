@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// http 模块
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -20,7 +23,14 @@ import { UserSettingsComponent } from './user-settings/user-settings.component'
 
 // 路由守卫
 import { LoginGuard } from './loginGuard/login.guard'
-import { UnsaveGuard } from './loginGuard/unsave.guard'
+import { UnsaveGuard } from './loginGuard/unsave.guard';
+import { RequestService } from '../service/request.service'
+
+import { AxiosService } from '../service/axios.service'
+
+
+import { LoginComponent } from './login/login.component';
+import { NewsComponent } from './news/news.component'
 
 @NgModule({
   // 引入组件，指令
@@ -33,13 +43,17 @@ import { UnsaveGuard } from './loginGuard/unsave.guard'
     bookDetailsComponent,
     IntroComponent,
     HomeComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    LoginComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
-  providers: [LoginGuard, UnsaveGuard],
+  providers: [LoginGuard, UnsaveGuard, RequestService, AxiosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

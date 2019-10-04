@@ -1,0 +1,22 @@
+<p>login works!</p>
+<h4>父组件传过来的数据： {{toChildStr}}</h4>
+
+<button (click)="getFatherComponentMethod()">调用父组件的方法</button>
+
+<br>
+<br>
+<hr>
+<h5>通过事件触发器，子组件向父组件广播数据</h5>
+<button (click)="sendParent()">数据发送给父组件</button>
+
+<br>
+<br>
+<hr>
+<div>
+    用户名： <input type="text"> --------- {{obj.num}}
+    <br>
+    密 码： <input type="text">
+    <br>
+
+    <button>LOGIN</button> &nbsp;&nbsp; <button>LOGIN OUT</button>
+</div>

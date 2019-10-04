@@ -1,0 +1,17 @@
+{
+    "/search": {
+        "target": "https://wenku.baidu.com/search",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/getnotice": {
+        "target": "https://wenku.baidu.com/message/getnotice",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/api": {
+        "target": "https://wenku.baidu.com",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

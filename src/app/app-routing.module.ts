@@ -8,6 +8,7 @@ import { TemplateBookComponent } from './book/template-book.component'
 import { bookDetailsComponent } from './bookDetails/bookDetails.component'
 import { HomeComponent } from './home/home.component'
 import { UserSettingsComponent } from './user-settings/user-settings.component'
+import { NewsComponent } from './news/news.component'
 
 // 子路由引入
 import { bookChildrenRoutes } from './book/template-book.component'
@@ -25,6 +26,7 @@ const routes: Routes = [
   // { path: 'details', component: bookDetailsComponent }
   { path: 'usersetting', component:  UserSettingsComponent, canActivate: [LoginGuard], canDeactivate: [UnsaveGuard]},
   { path: 'home', component:  HomeComponent},
+  { path: 'news', component:  NewsComponent},
 ];
 
 @NgModule({

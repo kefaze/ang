@@ -6,4 +6,31 @@
     <br>
     <button mat-button (click)="loginOut($event)">退出登录</button>
     
+    <hr>
+
+    <div style="border: 5px solid red">
+        <p>子组件：</p>>
+        <app-login (outer)="onReciveChildMsg($event)" #login [toChildStr]="toChildStr" [fatherMethod]="fatherMethod" [fatherComponent]="this"></app-login>
+        <button (click)="userChildMethod()">调用子组件方法</button>
+    </div>
+    
+
+</div>
+
+<div style="border: 5px solid blueviolet; margin-top: 40px;"> 
+    <h1> angular 中的 DOM 操作 1 - 原生Dom </h1>
+    <h5> ngOninit 组件和指令加载完成， 并不是 DOM 加载完成</h5>
+    <h5> ngAfterViewinit 视图加载完成， DOM操作放在此生命周期函数中</h5>
+
+    <div  id="dom1">
+        123
+    </div>
+
+    <div  id="dom2" *ngIf="showDom">
+        456
+    </div>
+
+    <h1> angular 中的 DOM 操作 2 - viewChild </h1>
+    <div #myDom>dom dom dom</div>        
+    
 </div>

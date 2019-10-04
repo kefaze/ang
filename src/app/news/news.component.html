@@ -1,0 +1,19 @@
+<p>news works!</p>
+
+<button (click)="getData()">GET 获取数据</button>
+<br>
+<button (click)="postData()">POST 请求</button>
+
+<br>
+<button (click)="getJsonpData()">JSON 请求解决跨域</button>
+<br>
+<br>
+
+<button (click)="axiosGetData()"> axios get data </button>
+
+
+
+<hr>
+<ul>
+    <li *ngFor="let item of newsList">{{ item }}</li>
+</ul>
